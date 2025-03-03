@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Play-Doh Artist Portfolio - My Web Page</title>
+    <meta name="description" content="Welcome to the portfolio of a Play-Doh Artist. Explore amazing Play-Doh sculptures and models, and learn about the skills and projects involved in this creative art form.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Play-Doh Artist Portfolio</h1>
+    </header>
+    <nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" tabindex="0">Home</a></li>
+            <li><a href="#about-me" tabindex="0">About</a></li>
+            <li><a href="#projects" tabindex="0">Projects</a></li>
+            <li><a href="#skills" tabindex="0">Skills</a></li>
+            <li><a href="#contact" tabindex="0">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="home" aria-labelledby="home-heading"></section>
+            <h2 id="home-heading">Home</h2>
+            <p>Welcome to the home of Play-Doh artistry! Dive into a world of creativity where vibrant colors and imaginative designs come to life. Explore my portfolio to see the magic of Play-Doh sculpting and discover the joy of hands-on art.</p>
+        </section>
+        <section id="about-me" ar">About Me</h2>
+            <p>I'm a Play-Doh Artist who creates amazing sculptures and models using Play-Doh. I bring imagination to life by molding and shaping colorful dough into various forms and figures.</p>
+            <p>Play-Doh Artists work closely with children and adults, inspiring creativity and encouraging hands-on play. They design and create everything from simple shapes to intricate designs, showcasing the endless possibilities of Play-Doh.</p>
+            <p>In addition to artistic skills, Play-Doh Artists must possess patience, creativity, and a passion for art. They play a vital role in fostering creativity and providing a fun, engaging experience for everyone involved.</p>
+        </section>
+        <section id="projects" aria-labelledby="projects-heading">
+            <h2 id="projects-heading">Projects</h2>
+            <div class="filter">
+                <button data-filter="all">All</button>
+                <button data-filter="dinosaur">Play-Doh Dinosaur</button>
+                <button data-filter="castle">Play-Doh Castle</button>
+                <button data-filter="flower">Play-Doh Flower Bouquet</button>
+                <button data-filter="animal">Play-Doh Animal Farm</button>
+                <button data-filter="rocket">Play-Doh Space Rocket</button>
+            </div>
+            <div class="project-list">
+                <article aria-labelledby="project1-heading" data-category="dinosaur" class="project-card">
+                    <h3 id="project1-heading">Project 1: Play-Doh Dinosaur</h3>
+                    <figure>
+                        <img src="images/dinosaur.jpg" alt="Play-Doh Dinosaur Sculpture" onclick="openModal(this)">
+                        <figcaption>A colorful Play-Doh dinosaur sculpture.</figcaption>
+                    </figure>
+                    <p>This project involves creating a detailed dinosaur using various colors of Play-Doh.</p>
+                </article>
+                <article aria-labelledby="project2-heading" data-category="castle" class="project-card">
+                    <h3 id="project2-heading">Project 2: Play-Doh Castle</h3>
+                    <figure>
+                        <img src="images/castle.jpg" alt="Play-Doh Castle Sculpture" onclick="openModal(this)">
+                        <figcaption>An intricate Play-Doh castle with towers and walls.</figcaption>
+                    </figure>
+                    <p>Build a majestic castle complete with towers and walls using Play-Doh.</p>
+                </article>
+                <article aria-labelledby="project3-heading" data-category="flower" class="project-card">
+                    <h3 id="project3-heading">Project 3: Play-Doh Flower Bouquet</h3>
+                    <figure>
+                        <img src="images/flowers.jpg" alt="Play-Doh Flower Bouquet" onclick="openModal(this)">
+                        <figcaption>A beautiful bouquet of Play-Doh flowers.</figcaption>
+                    </figure>
+                    <p>Create a vibrant bouquet of flowers using different colors of Play-Doh.</p>
+                </article>
+                <article aria-labelledby="project4-heading" data-category="animal" class="project-card">
+                    <h3 id="project4-heading">Project 4: Play-Doh Animal Farm</h3>
+                    <figure>
+                        <img src="images/animal-farm.jpg" alt="Play-Doh Animal Farm" onclick="openModal(this)">
+                        <figcaption>A collection of Play-Doh farm animals.</figcaption>
+                    </figure>
+                    <p>Make a variety of farm animals such as cows, pigs, and chickens using Play-Doh.</p>
+                </article>
+                <article aria-labelledby="project5-heading" data-category="rocket" class="project-card">
+                    <h3 id="project5-heading">Project 5: Play-Doh Space Rocket</h3>
+                    <figure>
+                        <img src="images/rocket.jpg" alt="Play-Doh Space Rocket" onclick="openModal(this)">
+                        <figcaption>A Play-Doh model of a space rocket.</figcaption>
+                    </figure>
+                    <p>Design and build a space rocket using Play-Doh for an out-of-this-world project.</p>
+                </article>
+            </div>
+        </section>
+        <section id="skills" aria-labelledby="skills-heading"></section>
+            <h2 id="skills-heading">Skills</h2>
+            <ul class="skills-list">
+                <li>Creativity</li>
+                <li>Patience</li>
+                <li>Attention to detail</li>
+                <li>Hand-eye coordination</li>
+                <li>Artistic skills</li>
+                <li>Ability to work with children</li>
+                <li>Imagination</li>
+            </ul>
+        </section>
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact</h2>
+            <form id="contact-form" action="submit-form" method="post" onsubmit="return validateForm()">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <span id="name-error" class="error-message"></span>
+            
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span id="email-error" class="error-message"></span>
+                </div>
+            
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <span id="message-error" class="error-message"></span>
+                </div>
+                
+                <button id="submit-button" type="submit" tabindex="0" aria-label="Submit form" disabled>Submit</button>
+            </form>
+        </section>
+
+        <div id="success-message" style="display: none; color: green; font-size: 1.2em; margin-top: 20px;">
+            Your message has been successfully submitted!
+        </div>
+
+        <!-- Modal Container -->
+        <div id="lightboxModal" class="modal" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <span class="close" onclick="closeModal()" tabindex="0" role="button" aria-label="Close Modal">&times;</span>
+            <img class="modal-content" id="modalImage" alt="Expanded image view">
+            <div id="caption"></div>
+        </div>
+
+    </main>
+    <footer>
+        <p>&copy; 2023 My Web Page</p>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>

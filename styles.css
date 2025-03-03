@@ -1,0 +1,329 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    section.projects .card {
+        flex: 1 1 calc(50% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+
+    nav {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    nav ul li {
+        padding: 5px 10px;
+        margin: 5px;
+    }
+
+    nav a {
+        padding: 5px 10px;
+        margin: 5px 0;
+    }
+
+    section.about-me {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    section.projects .card {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 5px;
+        padding: 5px;
+    }
+
+    header {
+        font-size: 18px;
+    }
+
+    nav {
+        padding: 5px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        padding: 5px;
+        margin: 5px 0;
+    }
+
+    section.about-me {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    section.projects {
+        padding: 10px;
+    }
+
+    section.projects .card {
+        padding: 10px;
+    }
+}
+header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298); /* Changed to a blue gradient */
+    color: #ffffff; /* Changed text color to white for better contrast */
+    padding: 20px;
+    text-align: center;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 10px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+section.about-me {
+    text-align: justify;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+#projects {
+    padding: 20px;
+}
+
+.filter {
+    margin-bottom: 20px;
+}
+
+.filter button {
+    margin-right: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    display: none; /* Initially hide all cards */
+    flex: 1 1 calc(33.333% - 20px); /* Adjust for three cards per row */
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.show {
+    display: block;
+}
+
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.project-card h3 {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        flex: 1 1 calc(50% - 20px); /* Adjust for two cards per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card {
+        flex: 1 1 100%; /* Adjust for one card per row on mobile screens */
+    }
+}
+
+.skills-list li {
+    position: relative;
+    list-style: none;
+    padding-left: 20px; /* Adjust padding to make space for the icon */
+}
+
+.skills-list li::before {
+    content: '\2713'; /* Unicode for the check mark icon */
+    font-family: Arial, sans-serif; /* Use a common font family */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 16px; /* Adjust icon size */
+    color: #000; /* Adjust icon color */
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Thumbnail images */
+.thumbnail {
+    width: 100px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* Responsive layout */
+@media only screen and (max-width: 600px) {
+    .modal-content {
+        width: 100%;
+    }
+    
+    .close {
+        font-size: 30px;
+    }
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+}
+
+#submit-button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+#submit-button.enabled {
+    background-color: green;
+    cursor: pointer;
+}
+
+/* Align all form elements to the left */
+form {
+    text-align: left;
+}
+
+/* Ensure input fields and textarea are aligned left */
+input[type="text"],
+input[type="email"],
+textarea {
+    display: block;
+    width: 25%;
+    margin-bottom: 10px;
+}
+
+/* Align labels to the left */
+label {
+    display: block;
+    margin-bottom: 5px;
+}
